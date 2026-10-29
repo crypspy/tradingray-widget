@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TradingRay Widget — Minimal Embed Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #050608;
+      color: #f3f3f5;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+    }
+    .grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <!-- 1. Frameless Candlestick Chart (Binance BTC/USDT) -->
+    <tradingray-chart
+      exchange="binance"
+      symbol="BTCUSDT"
+      interval="1h"
+      type="candles"
+      theme="dark"
+      watermark="on"
+      height="380"
+    ></tradingray-chart>
+
+    <!-- 2. Custom-Colored Price Line Chart (Bybit SOL/USDT) -->
+    <tradingray-chart
+      exchange="bybit"
+      symbol="SOLUSDT"
+      interval="15m"
+      type="line"
+      theme="dark"
+      line-color="#5b8cff"
+      price-line-color="#5b8cff"
+      price-line-style="dotted"
+      watermark="on"
+      height="380"
+    ></tradingray-chart>
+  </div>
+
+  <!-- Single lightweight script — zero dependencies -->
+  <script src="../dist/tradingray-widget.min.js"></script>
+</body>
+</html>
